@@ -20,10 +20,10 @@ class ItemIds extends PluginBase implements Listener {
         $player = $ev->getPlayer();
         if($player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
             $item = $ev->getItem()->getId();
+            $meta = $ev->getItem()->getMeta();
             if($item === 0){
                 
             }else{
-                $meta = $ev->getItem()->getMeta();
                 $player->sendTip("§8ItemId§f §5".$item."§f:§5".$meta);
             }
         }
