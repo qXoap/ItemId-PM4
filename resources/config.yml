@@ -18,4 +18,4 @@ Error-Sound: 'note.bass'
 #permissions
 # Change Command Permission Message and more
 No-Permission-Sound: 'note.bass'
-No-Permission-Message: 'You Dont Have Permission To Use This Command'
+No-Permission-Message: "You Dont Have Permission To Use This Command"
