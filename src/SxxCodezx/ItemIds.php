@@ -18,7 +18,7 @@ class ItemIds extends PluginBase implements Listener {
         self::$instance = $this;
         $this->getLogger()->info("Item Ids Enable");
         Server::getInstance()->getPluginManager()->registerEvents($this, $this);
-        Server::getInstance()->getCommandMap()->register("itemid", new ItemCommand($this));
+        Server::getInstance()->getCommandMap()->register("itemid", new ItemCommand());
     }
 
     public function getItemId(PlayerItemHeldEvent $ev){
