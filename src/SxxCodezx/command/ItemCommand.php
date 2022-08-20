@@ -44,7 +44,7 @@ class ItemCommand extends Command {
             }else{
                 $prefix = ItemIds::getInstance()->getConfig()->get("Command-Prefix");
                 $message = ItemIds::getInstance()->getConfig()->get("No-Permission-Message");
-                $player->sendMessage($prefix,$message);
+                $player->sendMessage($prefix.$message);
                 if(ItemIds::getInstance()->getConfig()->get("Command-Sound") === true){
                     Sounds::addSound($player, ItemIds::getInstance()->getConfig()->get("No-Permission-Sound"), 50, 1);
                 }
