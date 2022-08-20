@@ -12,7 +12,10 @@ use SxxCodezx\command\ItemCommand;
 
 class ItemIds extends PluginBase implements Listener {
 
+    public static $instance;
+
     public function onEnable(): void{
+        self::$instance = $this;
         $this->getLogger()->info("Item Ids Enable");
         Server::getInstance()->getPluginManager()->registerEvents($this, $this);
         Server::getInstance()->getCommandMap()->register("itemid", new ItemCommand($this));
@@ -36,5 +39,9 @@ class ItemIds extends PluginBase implements Listener {
                 }
             }
         }
+    }
+
+    public static function getInstance(): ItemIds {
+        return self::$instance;
     }
 }
