@@ -34,8 +34,6 @@ class ItemIds extends PluginBase implements Listener {
                     $message = str_replace("{META}", $meta, $message);
                     $message = str_replace("{ID}", $item, $message);
                     $player->sendTip($message);
-                }else if($this->getConfig()->get("Show-Popup") === false){
-
                 }
             }
         }

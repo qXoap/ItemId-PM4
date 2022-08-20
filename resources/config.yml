@@ -3,7 +3,19 @@ Command-Prefix: "§8[§eItemId§8] §7> "
 #message 
 # Use {ID} to see item id, Use {META} to see item meta
 Command-Message: "Item Id Is §5{ID}§f:§5{META}"
+Command-Error-Message: "Remember to have the item in hand!"
 #popup 
 # use true for enable popup, use false to disable popup
 Show-Popup: true
 Popup-Message: "§8ItemId§f §5{ID}§f:§5{META}"
+#Sounds
+# use true for enable Sound, use false to disable Sound
+# Check Sounds List at https://www.digminecraft.com/lists/sound_list_pe.php
+# Sound code taken from fernanACM
+Command-Sound: true
+Sucess-Sound: 'random.pop'
+Error-Sound: 'note.bass'
+#permissions
+# Change Command Permission Message and more
+No-Permission-Sound: 'note.bass'
+No-Permission-Message: 'You Dont Have Permission To Use This Command'
