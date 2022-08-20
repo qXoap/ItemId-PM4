@@ -1,2 +1,9 @@
 #prefix
 Command-Prefix: "§8[§eItemId§8] §7> "
+#message 
+# Use {ID} to see item id, Use {META} to see item meta
+Command-Message: "Item Id Is §5{ID}§f:§5{META}"
+#popup 
+# use true for enable popup, use false to disable popup
+Show-Popup: true
+Popup-Message: "§8ItemId§f §5{ID}§f:§5{META}"

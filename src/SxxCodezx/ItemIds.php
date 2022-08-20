@@ -14,7 +14,6 @@ class ItemIds extends PluginBase implements Listener {
 
     public function onEnable(): void{
         $this->getLogger()->info("Item Ids Enable");
-        $this->prefix = $this->getConfig()->get("Command-Prefix");
         Server::getInstance()->getPluginManager()->registerEvents($this, $this);
         Server::getInstance()->getCommandMap()->register("itemid", new ItemCommand($this));
     }
@@ -27,7 +26,14 @@ class ItemIds extends PluginBase implements Listener {
             if($item === 0){
                 
             }else{
-                $player->sendTip("§8ItemId§f §5".$item."§f:§5".$meta);
+                if($this->getConfig()->get("Show-Popup") === true){
+                    $message = $this->getConfig()->get("Popup-Message");
+                    $message = str_replace("{META}", $meta, $message);
+                    $message = str_replace("{ID}", $item, $message);
+                    $player->sendTip($message);
+                }else if($this->getConfig()->get("Show-Popup") === false){
+
+                }
             }
         }
     }

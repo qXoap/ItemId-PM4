@@ -22,9 +22,13 @@ class ItemCommand extends Command {
     {
         if($player instanceof Player){
             $playeritem = $player->getInventory()->getItemInHand();
-            $itemid = $playeritem->getId();
             $meta = $playeritem->getMeta();
-            $player->sendMessage($this->api->prefix."La Id De El Item es §5".$itemid."§f:§5".$meta);
+            $itemid = $playeritem->getId();
+            $prefix = $this->api->getConfig()->get("Command-Prefix");
+            $message = $this->api->getConfig()->get("Popup-Message");
+            $message = str_replace("{META}", $meta, $message);
+            $message = str_replace("{ID}", $itemid, $message);
+            $player->sendMessage($message);
         }else{
 
         }
